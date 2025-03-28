@@ -1,0 +1,19 @@
+<div class="form-container">
+  <form (submit)="saveTask()" #taskForm="ngForm">
+    <label for="title">Título:</label>
+    <input type="text" id="title" [(ngModel)]="task.title" name="title" required #title="ngModel" />
+    <small *ngIf="title.invalid && title.touched">El título es obligatorio.</small>
+
+    <label for="description">Descripción:</label>
+    <textarea id="description" [(ngModel)]="task.description" name="description" required #description="ngModel"></textarea>
+    <small *ngIf="description.invalid && description.touched">La descripción es obligatoria.</small>
+
+    <label for="status">Estado:</label>
+    <select id="status" [(ngModel)]="task.status" name="status" required #status="ngModel">
+      <option value="pendiente">Pendiente</option>
+      <option value="completada">Completada</option>
+    </select>
+
+    <button type="submit" [disabled]="taskForm.invalid">Guardar</button>
+  </form>
+</div>

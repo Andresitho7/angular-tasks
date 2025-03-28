@@ -1,0 +1,29 @@
+
+<app-form [task]="selectedTask" (taskSaved)="loadTasks()" ></app-form>
+
+<div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.id }}</td>
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.status }}</td>
+          <td>
+            <button class="edit-btn" (click)="editTask(task)">Editar</button>
+            <button class="delete-btn" (click)="deleteTask(task.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

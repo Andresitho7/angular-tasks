@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/forms.css';
+@import 'assets/styles/tables.css';
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
